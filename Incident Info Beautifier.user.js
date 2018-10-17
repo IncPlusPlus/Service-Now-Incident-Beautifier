@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Incident Info Beautifier
 // @namespace    ryanclohertytweaks
-// @version      0.1.2
+// @version      0.1.3
 // @description  Attempts to remove replies from the Incident Information tab
 // @author       Ryan Cloherty
 // @match        *://wit.service-now.com/incident.do*
@@ -53,15 +53,17 @@
 
     var correspondingNoReplyComment = 0;
     var hasSomethingBeenReplaced = "";
+    console.log(commentBodies[1].children[0].children[0].innerHTML);
+    console.log(commentsWithNoReplies[1]);
     for(var m = 2; m < divContainngMessageDivs.length; m+=3)
     {
-        if(commentBodies[correspondingNoReplyComment] === commentBodies[correspondingNoReplyComment].textContent)
+        if(commentBodies[correspondingNoReplyComment].children[0].children[0].innerHTML === commentsWithNoReplies[correspondingNoReplyComment])
         {
             hasSomethingBeenReplaced = ""
         }
         else
         {
-            hasSomethingBeenReplaced = "AAAAAAAA"
+            hasSomethingBeenReplaced = "MESSAGE HAS BEEN TRUNCATED"
         }
         document.getElementById("element.incident.comments_and_work_notes.additional").children[0].children[0].children[m].innerHTML = commentsWithNoReplies[correspondingNoReplyComment] + hasSomethingBeenReplaced;
         correspondingNoReplyComment++;
