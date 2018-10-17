@@ -1,10 +1,14 @@
 // ==UserScript==
 // @name         Incident Info Beautifier
 // @namespace    http://tampermonkey.net/
-// @version      0.1.1
+// @version      0.1.2
 // @description  Attempts to remove replies from the Incident Information tab
 // @author       Ryan Cloherty
 // @match        *://wit.service-now.com/incident.do*
+// @updateURL	https://github.com/IncPlusPlus/Service-Now-Incident-Beautifier/raw/master/Incident%20Info%20Beautifier.user.js
+// @downloadURL	https://github.com/IncPlusPlus/Service-Now-Incident-Beautifier/raw/master/Incident%20Info%20Beautifier.user.js
+// @homepageURL	https://github.com/IncPlusPlus/Service-Now-Incident-Beautifier
+// @supportURL	https://github.com/IncPlusPlus/Service-Now-Incident-Beautifier/issues
 // @grant        none
 // ==/UserScript==
 
