@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Incident Info Beautifier
-// @namespace    http://tampermonkey.net/
+// @namespace    ryanclohertytweaks
 // @version      0.1.2
 // @description  Attempts to remove replies from the Incident Information tab
 // @author       Ryan Cloherty
