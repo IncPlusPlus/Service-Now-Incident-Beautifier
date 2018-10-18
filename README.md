@@ -15,8 +15,13 @@ It should be noted that while this script is theoretically usable with Firefox, 
 ### For Chrome Users
 Step 1) [Install Tampermonkey from the chrome web store](https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo)  
 Step 2) [Click this link to install my script](../../raw/master/Incident%20Info%20Beautifier.user.js)  
-Step 3) Go to an incident page  
+Step 3) Go to an incident page in ServiceNow 
 Step 4) Locate the Tampermonkey extension's icon and click it  
+![Step4Image](Instructions%20Images%20Folder/Step%204.png)
 Step 5) Click the switch to the left of the words "Incident Info Beautifier" so that it turns green like in the picture  
+![Step5Image](Instructions%20Images%20Folder/Step%205.png)
 Step 6) Go to an incident page that had a lot of extra replies and useless info in it and see if they've been hidden and replaced with a button.  
 That's it! You're done!
+
+## Usage instructions
+### Coming soon!
