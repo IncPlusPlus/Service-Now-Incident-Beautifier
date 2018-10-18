@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Incident Info Beautifier
 // @namespace    ryanclohertytweaks
-// @version      1.0.0
+// @version      1.0.1
 // @description  Attempts to remove replies from the Incident Information tab
 // @author       Ryan Cloherty
 // @match        *://wit.service-now.com/incident.do*
@@ -95,10 +95,11 @@
     //This variable just keeps track of the comment that's being examined within the code block below
     var correspondingNoReplyComment = 0;
     var hasSomethingBeenReplaced = "";
+    console.log("And here we are");
     //Prints out the second latest reply with all the extra replies and that garbage. Useful for troubleshooting
-    console.log(commentBodies[5].children[0].children[0].innerHTML);
+    //console.log(commentBodies[0].children[0].children[0].innerHTML);
     //Prints out the second latest reply without all the extra replies and that garbage. Useful for toubleshooting
-    console.log(commentsWithNoReplies[5]);
+    //console.log(commentsWithNoReplies[0]);
     //Loop through each <div> tag that contains a comment
     for(var m = 2; m < divContainngMessageDivs.length; m+=3)
     {
