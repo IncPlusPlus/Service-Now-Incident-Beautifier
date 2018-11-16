@@ -5,6 +5,7 @@
 // @description  Attempts to remove replies from the Incident Information tab
 // @author       Ryan Cloherty
 // @match        *://wit.service-now.com/incident.do*
+// @match        *://wit.service-now.com/nav_to.do?uri=%2Fincident.do*
 // @updateURL	 https://github.com/IncPlusPlus/Service-Now-Incident-Beautifier/raw/master/Incident%20Info%20Beautifier.user.js
 // @downloadURL	 https://github.com/IncPlusPlus/Service-Now-Incident-Beautifier/raw/master/Incident%20Info%20Beautifier.user.js
 // @homepageURL	 https://github.com/IncPlusPlus/Service-Now-Incident-Beautifier
