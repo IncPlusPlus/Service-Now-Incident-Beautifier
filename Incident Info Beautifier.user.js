@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         Incident Info Beautifier
 // @namespace    ryanclohertytweaks
-// @version      1.0.1
+// @version      1.0.2-unstable
 // @description  Attempts to remove replies from the Incident Information tab
 // @author       Ryan Cloherty
 // @match        *://wit.service-now.com/incident.do*
+// @match        *://wit.service-now.com/nav_to.do?uri=%2Fincident.do*
 // @updateURL	 https://github.com/IncPlusPlus/Service-Now-Incident-Beautifier/raw/master/Incident%20Info%20Beautifier.user.js
 // @downloadURL	 https://github.com/IncPlusPlus/Service-Now-Incident-Beautifier/raw/master/Incident%20Info%20Beautifier.user.js
 // @homepageURL	 https://github.com/IncPlusPlus/Service-Now-Incident-Beautifier
@@ -21,24 +22,24 @@
     //Log the HTMLCollection of <div> tags (1/3 of which are the actual comments) to the console for troubleshooting
     //console.log(incidentComments.children[0].children[0].children);
     //Store the HTMLCollection of <div> tags. These tags are actually a few element layers down. They're the children within the first child element within the first child element of incidentComments
-    var divContainngMessageDivs = incidentComments.children[0].children[0].children;
+    var divContainingMessageDivs = incidentComments.children[0].children[0].children;
     //Log the total number of div tags in the HTMLCollection just to be extra sure the script read what it was supposed to
-    //console.log(divContainngMessageDivs.length);
+    //console.log(divContainingMessageDivs.length);
     //This should spit out the latest comment in the issue in the form of a <div> element in your browser's console
-    //console.log(divContainngMessageDivs.item(2));
+    //console.log(divContainingMessageDivs.item(2));
     //Beginning at the first <div> tag (item(0)), every 3rd <div> tag (item(3), item(6), ...) is used to make a thin divider line on the page. This should spit out true in the console
-    //console.log(divContainngMessageDivs.item(0).innerHTML === "<span></span><hr>");
+    //console.log(divContainingMessageDivs.item(0).innerHTML === "<span></span><hr>");
     //This should spit out the raw HTML of the first <div> tag representing the latest comment in the issue in your browser's console
-    //console.log(divContainngMessageDivs.item(2).innerHTML);
+    //console.log(divContainingMessageDivs.item(2).innerHTML);
 
     /*
     This section was created just to do some sanity checking in the early stages of this script.
     I'll keep it here in case somebody is maintaining this code down the line and wants to use this.
     */
     // var thinLineCount = 0;
-    // for(var i = 0; i < divContainngMessageDivs.length; i++)
+    // for(var i = 0; i < divContainingMessageDivs.length; i++)
     // {
-        // if(divContainngMessageDivs.item(i).innerHTML === "<span></span><hr>")
+        // if(divContainingMessageDivs.item(i).innerHTML === "<span></span><hr>")
         // {
             // thinLineCount++;
         // }
@@ -66,9 +67,9 @@
 
     //Grabs each <div> which contains a comment. The comments are the 3rd <div> tag (index 2) and each one is 3 <div> tags down from the previous one
     var commentBodies = [];
-    for(var j = 2; j < divContainngMessageDivs.length; j+=3)
+    for(var j = 2; j < divContainingMessageDivs.length; j+=3)
     {
-        commentBodies.push(divContainngMessageDivs.item(j));
+        commentBodies.push(divContainingMessageDivs.item(j));
     }
     //console.log(commentBodies);
 
@@ -101,7 +102,7 @@
     //Prints out the second latest reply without all the extra replies and that garbage. Useful for toubleshooting
     //console.log(commentsWithNoReplies[0]);
     //Loop through each <div> tag that contains a comment
-    for(var m = 2; m < divContainngMessageDivs.length; m+=3)
+    for(var m = 2; m < divContainingMessageDivs.length; m+=3)
     {
         /*
         This checks whether the comment has been truncated.
