@@ -29,5 +29,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - Version numbering from messy pre-release development to match [Semantic Versioning](http://semver.org/).
 
 [Unreleased]: https://github.com/IncPlusPlus/Service-Now-Incident-Beautifier/compare/master...unstable
-[1.0.2]: https://github.com/IncPlusPlus/Service-Now-Incident-Beautifier/compare/1.0.1...1.0.2
-[1.0.1]: https://github.com/IncPlusPlus/Service-Now-Incident-Beautifier/compare/1.0.0...1.0.1
+[1.0.2]: https://github.com/IncPlusPlus/Service-Now-Incident-Beautifier/compare/v1.0.1...v1.0.2
+[1.0.1]: https://github.com/IncPlusPlus/Service-Now-Incident-Beautifier/compare/v1.0.0...v1.0.1
